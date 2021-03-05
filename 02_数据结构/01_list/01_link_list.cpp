@@ -15,6 +15,15 @@ struct Node {
 	Node *next;
 };
 
+Node *reverse(Node *head, int n) {
+    if (n == 1) return p;
+    Node *tail = head.next;
+    *p = reverse(head->next, n - 1);
+    head.next = tail.next;
+    tail.next = head;
+    return p;
+}
+
 int main() {
 	Node *head = NULL;
 	head = new Node(1);
