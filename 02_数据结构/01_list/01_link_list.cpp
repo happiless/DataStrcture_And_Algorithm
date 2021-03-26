@@ -16,11 +16,10 @@ struct Node {
 };
 
 Node *reverse(Node *head, int n) {
-    if (n == 1) return p;
-    Node *tail = head.next;
-    *p = reverse(head->next, n - 1);
-    head.next = tail.next;
-    tail.next = head;
+    if (n == 1) return head;
+    Node *tail = head->next, *p = reverse(head->next, n - 1);
+    head->next = tail->next;
+    tail->next = head;
     return p;
 }
 
@@ -30,6 +29,7 @@ int main() {
 	head->next = new Node(2);
 	head->next->next = new Node(3);
 	head->next->next->next = new Node(4);
+	head = reverse(head, 2);
 	Node *p = head;
 	while (p != NULL) {
 		printf("%d->", p->data);
