@@ -6,7 +6,7 @@
 class Solution:
     def deleteDuplicates(self, head: ListNode) -> ListNode:
         """
-            1. 通过款吗指针，判断值是否相等，不相等则将慢指针指向快指针，无论是否相等，快指针往后走一步
+            1. 通过快慢指针，判断值是否相等，不相等则将慢指针指向快指针，无论是否相等，快指针往后走一步
             2. 如果p的值等于下一个值，则p.next = p.next.next， 不相等则 p = p.next
         :param head:
         :return:
